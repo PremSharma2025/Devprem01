@@ -30,6 +30,45 @@
                 "value": "Automatic"
               }
             ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "Test",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "testing",
+        "sourceLineageTag": "[dbo].[testing]",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
           },
           {
             "name": "ename",
@@ -52,7 +91,7 @@
             "mode": "directLake",
             "source": {
               "type": "entity",
-              "entityName": "Test",
+              "entityName": "testing",
               "expressionSource": "DatabaseQuery",
               "schemaName": "dbo"
             }
